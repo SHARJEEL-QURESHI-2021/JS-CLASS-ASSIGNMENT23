@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Timing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./img/13.avif);
+            background-position: center;
+            background-size: cover;
+            padding: 0 8%;
+            position: relative;
+        }
+
+        .logo {
+            width: 70px;
+            padding: 20px 0;
+            cursor: pointer;
+        }
+
+        .content {
+            top: 50%;
+            position: absolute;
+            transform: translateY(-50%);
+            color: rgb(255, 0, 0);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: brown;
+            font-size: 54px;
+            font-weight: 600;
+        }
+
+        .content span {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .Ramadan-time {
+            display: flex;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+
+        .Ramadan-time div {
+            flex-basis: 130px;
+
+        }
+
+        .Ramadan-time div p {
+            font-size: 60px;
+            margin-bottom: 5px;
+        }
+
+        .masj {
+            width: 100px;
+            position: absolute;
+            right: 10%;
+            bottom: 40px;
+            animation: masj 4s linear infinite;
+
+        }
+
+        .masj5 {
+            width: 100px;
+            position: absolute;
+            right: 5%;
+            bottom: 40px;
+            animation: masj 4.5s linear infinite;
+
+        }
+
+        .masj6 {
+            width: 100px;
+            position: absolute;
+            right: 6%;
+            bottom: 40px;
+            animation: masj 6s linear infinite;
+
+        }
+
+        .masj2 {
+            width: 50px;
+            position: absolute;
+            right: 9%;
+            bottom: 0;
+            animation: masj 5.5s linear infinite;
+        }
+
+        .masj3 {
+            width: 50px;
+            position: absolute;
+            right: 3%;
+            bottom: 0;
+            animation: masj 5.4s linear infinite;
+        }
+
+        .masj4 {
+            width: 50px;
+            position: absolute;
+            right: 5%;
+            bottom: 0;
+            animation: masj 5.1s linear infinite;
+        }
+
+        @keyframes masj {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            100% {
+                bottom: 150%;
+                opacity: 3;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+
+
+        <div class="content">
+            <p>Ramadan Mubarak to all of you and your family</p>
+            <h1>Remaining Time in <span> Eid-ul-Adha </span></h1>
+
+
+            <div class="Ramadan-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+
+
+        </div>
+
+        <img src="img/images-for--red-star-logo-png-13.png" class="masj">
+        <img src="img/images-for--red-star-logo-png-13.png" class="masj5">
+        <img src="img/images-for--red-star-logo-png-13.png" class="masj6">
+
+
+        <img src="img/images-for--red-star-logo-png-13.png" class="masj2">
+        <img src="img/images-for--red-star-logo-png-13.png" class="masj3">
+
+        <img src="img/images-for--red-star-logo-png-13.png" class="masj4">
+    </div>
+
+
+    <script>
+        var countDowndate = new Date("Jun 30,2023 00:00:00").getTime();
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDowndate - now;
+
+            // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            let d = Math.floor(distance / (1000 * 60 * 60 * 24))
+            let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let s = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+            if (h > 12) {
+                h = h - 12;
+            }
+            
+            d = (d < 10) ? "0" + d : d;
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            document.getElementById("days").innerHTML = d;
+            document.getElementById("hours").innerHTML = h;
+            document.getElementById("minutes").innerHTML = m;
+            document.getElementById("seconds").innerHTML = s;
+        }, 1000);
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
